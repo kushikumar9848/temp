@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SR University Placement Cell</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #faf4f4;
+    background-image:url('./road-1072823_640.jp ');
+  }
+  .container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(249, 247, 247, 0.976);
+  }
+  label {
+    font-weight: bold;
+  }
+  input[type="text"],
+  input[type="email"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #727c39;
+    border-radius: 3px;
+  }
+  button {
+    padding: 10px 20px;
+    background-color: #f5f6f7;
+    color: #181616;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  .img{
+    height: 100px;
+  }
+  .head
+  {
+    display: inline;
+    font-size: 50px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <img src="./download.jpg" class="img"/>
+  <h1 class="head">Placement Cell</h1>
+  <form id="studentForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="branch">Branch:</label>
+    <input type="text" id="branch" name="branch" required>
+
+    <label for="year">Year:</label>
+    <input type="text" id="year" name="year" required>
+
+    <label for="semester">Semester:</label>
+    <input type="text" id="semester" name="semester" required>
+
+    <label for="fatherName">Father's Name:</label>
+    <input type="text" id="fatherName" name="fatherName" required>
+
+    <label for="motherName">Mother's Name:</label>
+    <input type="text" id="motherName" name="motherName" required>
+
+    <label>Gender:</label>
+    <input type="radio" id="male" name="gender" value="Male" required>
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="Female" required>
+    <label for="female">Female</label>
+
+    <label for="dob">DOB:</label>
+    <input type="date" id="dob" name="dob" required>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required>
+
+    <label for="mobile">Mobile:</label>
+    <input type="tel" id="mobile" name="mobile" required>
+
+    <label for="email">Email ID:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="address">Address:</label>
+    <textarea id="address" name="address" rows="4" required></textarea>
+
+    <label for="pincode">Pincode:</label>
+    <input type="text" id="pincode" name="pincode" required>
+
+    <label for="languages">Languages Known:</label>
+    <input type="text" id="languages" name="languages">
+
+    <label for="otherDetails">If Any Other Details:</label>
+    <textarea id="otherDetails" name="otherDetails" rows="4"></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+<script>
+  const form = document.getElementById('studentForm');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Collect form data
+    const formData = new FormData(form);
+    const data = {};
+    formData.forEach((value, key) => {
+      data[key] = value;
+    });
+
+    // Display collected data (you can customize this part)
+    console.log('Collected Data:', data);
+    alert('Student information collected successfully!');
+  });
+</script>
+</body>
+</html>
